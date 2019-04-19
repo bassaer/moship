@@ -1,0 +1,30 @@
+buildscript {
+    ext.kotlin_version = '1.2.71'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
+apply plugin: "kotlin"
+apply plugin: 'application'
+
+mainClassName = 'moship.MainKt'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.squareup.moshi:moshi-kotlin:1.8.0'
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src/main/kotlin'
+}
