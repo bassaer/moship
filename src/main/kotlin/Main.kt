@@ -3,10 +3,12 @@ package moship
 import com.squareup.moshi.Json
 import com.squareup.moshi.Moshi
 
+
 data class User(
 var id: Int,
 var name: String
 )
+
 
 fun jsonToObject() {
     val jsonText = "{\"id\": 0, \"name\": \"hoge\"}"
@@ -14,6 +16,7 @@ fun jsonToObject() {
     val user = adapter.fromJson(jsonText)
     println("id: ${user?.id}, name: ${user?.name}")
 }
+
 
 fun objectToJson() {
     val user = User(999, "foo")
@@ -23,7 +26,7 @@ fun objectToJson() {
 }
 
 
-fun main(args: Array<String>) {
+fun main() {
     jsonToObject()
     objectToJson()
 }
